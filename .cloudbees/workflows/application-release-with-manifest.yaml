@@ -11,71 +11,71 @@ jobs:
   pre-prod:
     environment: pre-prod
     steps:
-      - name: Deploy App8-Frontend to Preprod
+      - name: Deploy App10-Frontend to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].digest }}
           target-environment: pre-prod
-          name: App8-Frontend
+          name: App10-Frontend
 
-      - name: Deploy App8-Backend to Preprod
+      - name: Deploy App10-Backend to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].digest }}
           target-environment: pre-prod
-          name: App8-Backend
+          name: App10-Backend
 
-      - name: Deploy App8-APIs to Preprod
+      - name: Deploy App10-APIs to Preprod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].digest }}
           target-environment: pre-prod
-          name: App8-APIs
+          name: App10-APIs
   prod:
     needs: pre-prod
     environment: prod
     steps:
-      - name: Deploy App8-Frontend to Prod
+      - name: Deploy App10-Frontend to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-Frontend']['App8-Frontend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-Frontend']['App10-Frontend'].digest }}
           target-environment: prod
-          name: App8-Frontend
+          name: App10-Frontend
 
-      - name: Deploy App8-Backend to Prod
+      - name: Deploy App10-Backend to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-Backend']['App8-Backend'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-Backend']['App10-Backend'].digest }}
           target-environment: prod
-          name: App8-Backend
+          name: App10-Backend
 
-      - name: Deploy App8-APIs to Prod
+      - name: Deploy App10-APIs to Prod
         kind: deploy
-        if: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].deploy }}
+        if: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].deploy }}
         uses: cloudbees-io/register-deployed-artifact@v1
         with:
-          version: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].version }}
-          url: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].url }}
-          digest: ${{ fromJSON(inputs.manifest)['App8-APIs']['App8-APIs'].digest }}
+          version: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].version }}
+          url: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].url }}
+          digest: ${{ fromJSON(inputs.manifest)['App10-APIs']['App10-APIs'].digest }}
           target-environment: prod
-          name: App8-APIs
+          name: App10-APIs
